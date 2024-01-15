@@ -41,7 +41,7 @@ export function MeetingPage() {
 
         s.on("localDescription", async ({ description }) => {
           // Receiving video -
-          console.log({ description });
+          console.log({ description },"local desc");
           pc.setRemoteDescription(description);
           pc.ontrack = (e) => {
             setRemoteVideoStream(new MediaStream([e.track]));
@@ -59,7 +59,7 @@ export function MeetingPage() {
         });
           s.on("remoteDescription", async ({ description }) => {
             // Receiving video -
-            console.log({ description });
+            console.log({ description },"remote desc");
             pc.setRemoteDescription(description);
             pc.ontrack = (e) => {
               setRemoteVideoStream(new MediaStream([e.track]));

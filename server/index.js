@@ -1,9 +1,7 @@
 const express = require('express');
 const app = express();
 
-app.listen("/",(req,res)=>{
-  res.send("hello")
-})
+
 const http = require('http');
 const server = http.createServer(app);
 const { Server } = require("socket.io");
@@ -100,5 +98,5 @@ io.on('connection', (socket) => {
 
 server.listen(3001, (req,res) => {
   console.log('listening on *:3001');
-  res.send("hello babai")
+ 
 });
